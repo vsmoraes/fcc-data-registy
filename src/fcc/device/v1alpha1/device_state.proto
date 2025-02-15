@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package fcc.device.v1alpha1;
+
+enum DeviceState {
+  UNKNOWN = 0;
+  ON = 1;
+  OFF = 2;
+  ERROR = 3;
+}

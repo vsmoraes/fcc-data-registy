@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package fcc.device.v1alpha1;
+
+message Sensor {
+  string name = 1;
+  string unit = 2;
+  string value = 3;
+}

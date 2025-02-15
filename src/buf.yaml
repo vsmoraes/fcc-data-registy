@@ -1,0 +1,12 @@
+version: v1
+deps:
+breaking:
+  ignore_unstable_packages: true
+  use:
+  - FILE
+lint:
+  allow_comment_ignores: true
+  use:
+  - DEFAULT
+  - PACKAGE_NO_IMPORT_CYCLE
+  - UNARY_RPC

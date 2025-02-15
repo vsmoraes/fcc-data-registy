@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package fcc.device.v1alpha1;
+
+import "fcc/device/v1alpha1/device.proto";
+
+service DeviceService {
+  rpc ListDevices (ListDevicesRequest) returns (ListDevicesResponse);
+  rpc GetDevice (GetDeviceRequest) returns (GetDeviceResponse);
+  rpc ExecuteAction (ExecuteActionRequest) returns (ExecuteActionResponse);
+}
+
+message ListDevicesRequest {}
+
+message ListDevicesResponse {
+  repeated Device devices = 1;
+}
+
+message GetDeviceRequest {
+  string device_id = 1;
+}
+
+message GetDeviceResponse {
+  Device device = 1;
+}
+
+message ExecuteActionRequest {
+  string device_id = 1;
+  string action_name = 2;
+  repeated string parameters = 3;
+}
+
+message ExecuteActionResponse {
+  bool success = 1;
+  string message = 2;
+}
